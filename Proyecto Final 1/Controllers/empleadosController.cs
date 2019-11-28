@@ -15,10 +15,20 @@ namespace Proyecto_Final_1.Controllers
         private FinalEntities2 db = new FinalEntities2();
 
         // GET: empleados
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    var empleados = db.empleados.Include(e => e.cargos).Include(e => e.cargos1).Include(e => e.cargos2).Include(e => e.departamentos);
+        //    return View(empleados.ToList());
+        //}
+        public ActionResult Index(string SearchString)
         {
-            var empleados = db.empleados.Include(e => e.cargos).Include(e => e.cargos1).Include(e => e.cargos2).Include(e => e.departamentos);
-            return View(empleados.ToList());
+            if (SearchString == null)
+            {
+                var empleados = db.empleados.Include(e => e.cargos).Include(e => e.cargos1).Include(e => e.cargos2).Include(e => e.departamentos);
+                return View(empleados.ToList());
+            }
+            var resultado = db.empleados.Where(x => x.Nombre.Contains(SearchString) || x.departamentos.Nombre.Contains(SearchString) && x.Estatus == "Activo");
+            return View(resultado.ToList());
         }
 
         // GET: empleados/Details/5

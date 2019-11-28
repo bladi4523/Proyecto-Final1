@@ -15,14 +15,14 @@ namespace Proyecto_Final_1.Controllers
         private FinalEntities2 db = new FinalEntities2();
 
         // GET: nominas
-        public ActionResult Index(string searching)
+        public ActionResult Index(string SearchString)
         {
             var nominas = from n in db.nomina
 
                           select n;
-            if (!String.IsNullOrEmpty(searching))
+            if (!String.IsNullOrEmpty(SearchString))
             {
-                nominas = nominas.Where(n => n.Mes.Contains(searching));
+                nominas = nominas.Where(n => n.Mes.Contains(SearchString) || n.Año.ToString() == SearchString);
             }
             return View(nominas.ToList());
         }
