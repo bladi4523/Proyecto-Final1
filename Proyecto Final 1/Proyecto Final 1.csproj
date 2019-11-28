@@ -172,10 +172,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\empleadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\licenciasController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\nominasController.cs" />
     <Compile Include="Controllers\permisosController.cs" />
     <Compile Include="Controllers\Salida_EmpleadosController.cs" />
+    <Compile Include="Controllers\vacacionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -317,6 +319,16 @@
     <Content Include="Views\permisos\Details.cshtml" />
     <Content Include="Views\permisos\Edit.cshtml" />
     <Content Include="Views\permisos\Index.cshtml" />
+    <Content Include="Views\vacaciones\Create.cshtml" />
+    <Content Include="Views\vacaciones\Delete.cshtml" />
+    <Content Include="Views\vacaciones\Details.cshtml" />
+    <Content Include="Views\vacaciones\Edit.cshtml" />
+    <Content Include="Views\vacaciones\Index.cshtml" />
+    <Content Include="Views\licencias\Create.cshtml" />
+    <Content Include="Views\licencias\Delete.cshtml" />
+    <Content Include="Views\licencias\Details.cshtml" />
+    <Content Include="Views\licencias\Edit.cshtml" />
+    <Content Include="Views\licencias\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -178,3 +178,32 @@ Comentario varchar(max),
 
 alter table licencias add foreign key (Id_Em) references empleados(Id_Em);
 -------------------------------------------------------------------------
+
+--------------Lista de entradas de empleados por mes--------------
+SELECT [Id_Em]
+      ,[Codigo_emp]
+      ,[Nombre]
+      ,[Apellido]
+      ,[Telefono]
+      ,[Id_Dep]
+      ,[Id_car]
+	  , FORMAT([Fecha_Ingreso], 'MMMM yyyy') as MesEntrada
+      ,[Salario]
+      ,[Estatus]
+  FROM [dbo].[empleados]
+GO
+
+--------------Lista de salidas de empleados por mes--------------
+SELECT e.[Id_Em]
+      ,[Codigo_emp]
+      ,[Nombre]
+      ,[Apellido]
+      ,[Telefono]
+      ,[Id_Dep]
+      ,[Id_car]
+	  , FORMAT(se.[Fecha_Salida], 'MMMM yyyy') as MesSalida
+      ,[Salario]
+      ,[Estatus]
+  FROM [dbo].[empleados] e
+  inner join [dbo].[salida_empleados] se on e.Id_Em = se.Id_em
+GO
