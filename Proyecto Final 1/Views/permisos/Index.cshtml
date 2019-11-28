@@ -9,6 +9,13 @@
 <p>
     @Html.ActionLink("Crear Nuevo", "Create")
 </p>
+@using (Html.BeginForm("Index", "permisos"))
+{
+    <p>
+        Buscar Permiso por Nombre.: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -21,12 +28,20 @@
             @Html.DisplayNameFor(model => model.Comentario)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.empleados.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados.Apellido)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.empleados.Codigo_emp)
         </th>
+
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.FechaDesde)
@@ -38,14 +53,20 @@
             @Html.DisplayFor(modelItem => item.Comentario)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.empleados.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empleados.Apellido)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.empleados.Codigo_emp)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Per }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id_Per }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Per })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id_Per }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id_Per }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id_Per })
         </td>
     </tr>
-}
+    }
 
 </table>

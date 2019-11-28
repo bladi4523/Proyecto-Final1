@@ -15,11 +15,17 @@ namespace Proyecto_Final_1.Controllers
         private FinalEntities2 db = new FinalEntities2();
 
         // GET: permisos
-        public ActionResult Index()
+
+        public ActionResult Index(string SearchString)
         {
-            var permisos = db.permisos.Include(p => p.empleados);
-            return View(permisos.ToList());
-        }
+            if (SearchString == null)
+            {
+                var permisos = db.permisos.Include(p => p.empleados);
+                return View(permisos.ToList());
+            }
+            var resultado = db.permisos.Where(x => x.empleados.Nombre.Contains(SearchString));
+            return View(resultado.ToList());
+         }
 
         // GET: permisos/Details/5
         public ActionResult Details(int? id)

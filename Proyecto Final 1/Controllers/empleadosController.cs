@@ -30,7 +30,16 @@ namespace Proyecto_Final_1.Controllers
             var resultado = db.empleados.Where(x => x.Nombre.Contains(SearchString) || x.departamentos.Nombre.Contains(SearchString) && x.Estatus == "Activo");
             return View(resultado.ToList());
         }
-
+        public ActionResult EntradaEmpleado(string SearchString)
+        {
+            if (string.IsNullOrEmpty(SearchString))
+            {
+                var empleados = db.empleados.Include(e => e.cargos).Include(e => e.cargos1).Include(e => e.cargos2).Include(e => e.departamentos);
+                return View(empleados.ToList());
+            }
+            var resultado = db.empleados.Where(x => x.Fecha_Ingreso.Value.Month.ToString() == SearchString);
+            return View(resultado.ToList());
+        }
         // GET: empleados/Details/5
         public ActionResult Details(int? id)
         {

@@ -15,10 +15,18 @@ namespace Proyecto_Final_1.Controllers
         private FinalEntities2 db = new FinalEntities2();
 
         // GET: Salida_Empleados
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
-            var salida_Empleados = db.Salida_Empleados.Include(s => s.empleados);
-            return View(salida_Empleados.ToList());
+            //var salida_Empleados = db.Salida_Empleados.Include(s => s.empleados);
+            //return View(salida_Empleados.ToList());
+
+            if (string.IsNullOrEmpty(SearchString))
+            {
+                var salida_Empleados = db.Salida_Empleados.Include(s => s.empleados);
+                return View(salida_Empleados.ToList());
+            }
+            var resultado = db.Salida_Empleados.Where(x => x.Fecha_salida.Value.Month.ToString() == SearchString);
+            return View(resultado.ToList());
         }
 
         // GET: Salida_Empleados/Details/5

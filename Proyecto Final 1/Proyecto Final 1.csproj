@@ -329,6 +329,7 @@
     <Content Include="Views\licencias\Details.cshtml" />
     <Content Include="Views\licencias\Edit.cshtml" />
     <Content Include="Views\licencias\Index.cshtml" />
+    <Content Include="Views\empleados\EntradaEmpleado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
