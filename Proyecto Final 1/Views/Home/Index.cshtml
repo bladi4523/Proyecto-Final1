@@ -1,31 +1,175 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<style>
+    .img-circle {
+        border-radius: 50%;
+    }
 
+    .img-circle {
+        border-radius: 0;
+     }
+
+    .ratio {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 0;
+        /*padding-bottom: 100%;*/
+        position: relative;
+        width: 100%;
+    }
+
+    .img-circle {
+        border-radius: 50%;
+    }
+
+    .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+</style>
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>
+        Programación III G1 | S-SOF-005-1654-2019-C-3
+    </h1>
+    <p class="lead">
+        PROYECTO FINAL
+    </p>
+
+    <p>APLICACIÓN DE GESTIÓN DE RECURSOS HUMANOS</p>
+
+    <p>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="img" style="width:200px">
+                    <img class="ratio img-responsive img-circle text-center" src="~/Content/img/20191115_104131.jpg">
+                </div>
+                <h2>Bladimir Cleto</h2>
+            </div>
+            <div class="col-md-6">
+                <div id="img" style="width:200px">
+                    <img class="ratio img-responsive img-circle text-center" src="~/Content/img/instasize_191113192958.png">
+                </div>
+                <h2>Niurlix Olivero</h2>
+            </div>
+        </div>
+        <br/>
+<p><strong>M&Oacute;DULO DE MANTENIMIENTOS</strong></p>
+    <p>Este m&oacute;dulo consiste en crear formularios que alimentes sendas tablas.</p>
+    <ul>
+        <li>
+            <strong>Empleados</strong>
+            <ul>
+                <li>(Id, C&oacute;digo Empleado, Nombre, Apellido, Tel&eacute;fono, Departamento, Cargo, Fecha ingreso, Salario, Estatus (Activo/Inactivo))</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Departamentos</strong>
+            <ul>
+                <li>(Id, C&oacute;digo Departamento, Nombre)</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Cargos</strong>
+            <ul>
+                <li>(Id, Cargo)</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>M&Oacute;DULO DE PROCESOS</strong></p>
+    <p>En este m&oacute;dulo se van a configurar algunos procesos o acciones. Vale decir que estos procesos o acciones son registrados en respectivas tablas</p>
+    <ul>
+        <li>
+            <strong>C&aacute;lculo de n&oacute;mina</strong>
+            <ul>
+                <li>Calcular el monto total de la n&oacute;mina, sumando el salario de los empleados activos y presentando el total, para que sea visto y validado por la persona encargada.</li>
+                <li>Almacenar en una tabla nominas la siguiente informaci&oacute;n: (Id, A&ntilde;o, Mes, Monto Total)</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Salida de empleados</strong>
+            <ul>
+                <li>Inactivar a un determinado empleado, y almacenar la informaci&oacute;n en una tabla salidas</li>
+                <li>(Empleado, Tipo salida (Renuncia, Despido, Desahucio), Motivo, Fecha Salida)</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Vacaciones:</strong>
+            <ul>
+                <li>Registrar las vacaciones que tome un empleado.</li>
+                <li>(Empleado, Desde, Hasta, Correspondiente a: (a&ntilde;o), Comentarios)</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Permisos</strong>
+            <ul>
+                <li>Registrar los permisos que tome un empleado.</li>
+                <li>(Empleado, Desde, Hasta, Comentarios)</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Licencias</strong>
+            <ul>
+                <li>Registrar las licencias que tome un empleado.</li>
+                <li>(Empleado, Desde, Hasta, Motivo, Comentarios)</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>M&Oacute;DULO DE INFORMES</strong></p>
+    <p>En este m&oacute;dulo se elegir&aacute; el tipo de informe a generar para presentar listas de datos en vistas</p>
+    <ul>
+        <li>
+            <strong>N&oacute;minas:</strong>
+            <ul>
+                <li>Con este informe se busca visualizar todas las n&oacute;minas de un a&ntilde;o especificado, o bien visualizar la correspondiente a un mes en espec&iacute;fico</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Empleados Activos</strong>
+            <ul>
+                <li>Aqu&iacute; buscamos visualizar a los empleados activos de la empresa, con opci&oacute;n de verlos todos, o de filtrar por nombre o por departamento. (Incluir ambos filtros)</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Empleados inactivos</strong>
+            <ul>
+                <li>Visualizar todos los empleados que han salido de la empresa</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Departamentos</strong>
+            <ul>
+                <li>Listar los departamentos creados</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Cargos</strong>
+            <ul>
+                <li>Listar los cargos creados</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Entradas de empleados por mes</strong>
+            <ul>
+                <li>Visualizar las entradas (empleados creados, ingresados) en un mes determinado por el usuario</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Salida de empleados por mes</strong>
+            <ul>
+                <li>Visualizar las entradas (empleados creados, ingresados) en un mes determinado por el usuario</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Permisos</strong>
+            <ul>
+                <li>Visualizar los permisos tomados por determinado empleado (a elegir por parte del usuario)</li>
+            </ul>
+        </li>
+    </ul>
+    </p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
