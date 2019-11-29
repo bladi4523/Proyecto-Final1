@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\cargosController.cs" />
     <Compile Include="Controllers\empleadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\licenciasController.cs" />
@@ -330,6 +331,11 @@
     <Content Include="Views\licencias\Edit.cshtml" />
     <Content Include="Views\licencias\Index.cshtml" />
     <Content Include="Views\empleados\EntradaEmpleado.cshtml" />
+    <Content Include="Views\cargos\Create.cshtml" />
+    <Content Include="Views\cargos\Delete.cshtml" />
+    <Content Include="Views\cargos\Details.cshtml" />
+    <Content Include="Views\cargos\Edit.cshtml" />
+    <Content Include="Views\cargos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

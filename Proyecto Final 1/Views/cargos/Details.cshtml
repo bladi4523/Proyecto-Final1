@@ -1,0 +1,26 @@
+﻿@model Proyecto_Final_1.Models.cargos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>cargos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CargosN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CargosN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_car }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
